@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarships Abroad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        header {
+            background: #0044cc;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        nav {
+            margin: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+        .hero {
+            background: url('https://source.unsplash.com/1600x400/?study,scholarship') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .section {
+            background: white;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        .section h2 {
+            color: #0044cc;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 10px;
+        }
+        footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .social-links a {
+            margin: 0 15px;
+            color: #0044cc;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+{% include "navigation.html" %}
+<div class="hero">
+    <h1>Empowering Students to Study Abroad</h1>
+</div>
+
+<div class="container">
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>Welcome to Scholarships Abroad! Our mission is to help students from around the world access the best educational opportunities available. We understand that pursuing education overseas can be both exciting and daunting, especially when it comes to financing your studies.</p>
+        <p>Our dedicated team provides comprehensive resources, including scholarship listings, application tips, and expert advice to guide you through the process. Join us on this journey to unlock your potential and achieve your academic dreams!</p>
+    </section>
+
+    <section id="scholarships" class="section">
+        <h2>Available Scholarships</h2>
+        <p>We curate a wide array of scholarship opportunities tailored for international students. Here are some categories:</p>
+        <ul>
+            <li><strong>Full Tuition Scholarships:</strong> Covering all tuition fees for international students, making education accessible.</li>
+            <li><strong>Partial Tuition Scholarships:</strong> Offering a percentage of tuition fees to help lighten the financial burden.</li>
+            <li><strong>Living Stipends:</strong> Financial support for living expenses while studying abroad.</li>
+            <li><strong>Research Grants:</strong> Funding for students pursuing research projects in various fields.</li>
+            <li><strong>Merit-Based Scholarships:</strong> Awards based on academic achievement and extracurricular involvement.</li>
+        </ul>
+        <p>Explore our database to find the scholarship that fits your needs. We update our listings regularly to ensure you have access to the latest opportunities!</p>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need assistance, feel free to reach out:</p>
+        <p>Email: <a href="mailto:info@scholarshipsabroad.com" style="color: #0044cc;">info@scholarshipsabroad.com</a></p>
+        <p>Phone: +1 (555) 123-4567</p>
+        <p>Follow us on social media for updates and tips:</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </section>
+</div>
+<section id="what-we-do" class="section">
+    <h2>What We Do</h2>
+    <p>At Scholarships Abroad, we are dedicated to empowering students to pursue their dreams of studying internationally. Our comprehensive services include:</p>
+    <ul>
+        <li><strong>Scholarship Listings:</strong> A curated database of scholarships from around the world, tailored to various fields of study and academic levels.</li>
+        <li><strong>Application Guidance:</strong> Step-by-step assistance on how to apply for scholarships, including tips on crafting compelling essays and preparing for interviews.</li>
+        <li><strong>Resource Center:</strong> Access to articles, webinars, and guides that provide insights into the scholarship application process and studying abroad.</li>
+        <li><strong>Expert Consultation:</strong> Personalized advice from our team of experts who can help you identify the best scholarship opportunities for your goals.</li>
+        <li><strong>Community Support:</strong> Join our community of like-minded students for networking, sharing experiences, and finding encouragement during your journey.</li>
+    </ul>
+    <p>We are committed to making international education accessible to everyone. Let us help you take the first step toward your future!</p>
+</section>
+
+<style>
+    #what-we-do {
+        background: #e6f7ff;
+    }
+    #what-we-do h2 {
+        color: #0044cc;
+    }
+    #what-we-do ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    #what-we-do li {
+        background: #fff;
+        margin: 10px 0;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+</style>
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2024 Scholarships Abroad. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="#" title="Facebook"><img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png"/></a>
+            <a href="#" title="Twitter"><img src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png"/></a>
+            <a href="#" title="Instagram"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png"/></a>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: #222;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: auto;
+        padding: 0 20px;
+    }
+    .social-links a {
+        margin: 0 10px;
+        display: inline-block;
+        transition: transform 0.3s;
+    }
+    .social-links a:hover {
+        transform: scale(1.1);
+    }
+    .social-links img {
+        vertical-align: middle;
+    }
+</style>
+
+</body>
+</html>
