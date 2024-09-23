@@ -3,206 +3,434 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scholarships Abroad</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <title>Education Scholars</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/testimonial.css">
     <style>
+        .alert {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .faq {
+            color: #007BFF;
+        }
+        /* Global Styles */
         body {
             font-family: 'Montserrat', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
-            background-color: #f0f8ff;
-            color: #333;
         }
-        header {
-            background: #0044cc;
-            color: #fff;
-            padding: 20px;
+
+        /* Section Title */
+        .section-title {
+            font-size: 2.5rem;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-        nav {
-            margin: 10px 0;
-        }
-        nav a {
-            color: #fff;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #ffd700;
-        }
-        .hero {
-            background: url('https://source.unsplash.com/1600x400/?study,scholarship') no-repeat center center/cover;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            margin-bottom: 1.5rem;
+            color: #004080;
+            letter-spacing: 2px;
             position: relative;
         }
-        .hero h1 {
-            font-size: 3em;
-            margin: 0;
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #ffa500;
+            margin: 1rem auto;
         }
-        .container {
-            padding: 20px;
-            max-width: 1200px;
-            margin: auto;
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #4b79a1, #283e51);
+            color: white;
+            border-radius: 15px;
+            margin: 2rem auto;
+            max-width: 800px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-        .section {
-            background: white;
-            padding: 30px;
-            margin: 20px 0;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+
+        .cta-title {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            position: relative;
         }
-        .section:hover {
+
+        .cta-title::after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background-color: #ffa500;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .cta-text {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #e0e7ea;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: #ffa500;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+            box-shadow: 0 10px 20px rgba(255, 165, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            background-color: #ff8c00;
             transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(255, 140, 0, 0.4);
         }
-        .section h2 {
-            color: #0044cc;
-            border-bottom: 2px solid #ffd700;
-            padding-bottom: 10px;
-        }
-        footer {
-            background: #222;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-        .social-links a {
-            margin: 0 15px;
-            color: #0044cc;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 2.5em;
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .cta-title {
+                font-size: 2.2rem;
+            }
+
+            .cta-text {
+                font-size: 1.3rem;
+            }
+
+            .cta-button {
+                font-size: 1.1rem;
+                padding: 0.8rem 2rem;
             }
         }
+
+        /* Service and Process Item Styles */
+
+        .process-step {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+            margin: 1rem; /* Adjusted margin for consistent spacing */
+            flex: 1; /* Allow items to grow equally */
+            max-width: 300px; /* Optional: set a max width for uniformity */
+        }
+
+
+        .process-step.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Process Section Styles */
+        .process {
+            padding: 4rem 2rem;
+            background-color: #f9f9f9;
+            text-align: center;
+            display: flex; /* Use flexbox */
+            justify-content: center; /* Center items */
+            gap: 2rem; /* Space between items */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+
+        /* FAQ Styles */
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-answer {
+            display: none; /* Initially hidden */
+        }
+        /* Initial state: Hidden and shifted down */
+.service-item {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Active state: Visible and in place */
+.service-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Styling for each service-item */
+.service-item {
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+/* Initially hide the service items */
+.service-item {
+    opacity: 0;
+    transform: translateY(100px); /* Initially positioned below the viewport */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Show the service items when scrolling down */
+.service-item.show-down {
+    opacity: 1;
+    transform: translateY(0); /* Move into view from the bottom */
+}
+
+/* Show the service items when scrolling up */
+.service-item.show-up {
+    opacity: 1;
+    transform: translateY(-40px); /* Move into view from the top */
+}
+
+
+
+
     </style>
 </head>
 <body>
+
+
+
 {% include "navigation.html" %}
-<div class="hero">
-    <h1>Empowering Students to Study Abroad</h1>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+    {% for category, message in messages %}
+        <div class="alert {{ category }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+{% endwith %}
+
+<div class="main">
+    <h1>Studying Abroad this Fall?</h1>
+    <h2>Make your transition a success with a Mentor!</h2>
+    <button>Book a Consultation</button>
 </div>
 
-<div class="container">
-    <section id="about" class="section">
-        <h2>About Us</h2>
-        <p>Welcome to Scholarships Abroad! Our mission is to help students from around the world access the best educational opportunities available. We understand that pursuing education overseas can be both exciting and daunting, especially when it comes to financing your studies.</p>
-        <p>Our dedicated team provides comprehensive resources, including scholarship listings, application tips, and expert advice to guide you through the process. Join us on this journey to unlock your potential and achieve your academic dreams!</p>
-    </section>
+<div class="who-we-are">
+    <h1>Who We Are</h1>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula at
+        urna cursus lacinia.
+        Donec ullamcorper urna nec urna scelerisque, vel malesuada arcu viverra.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula at urna cursus lacinia.
+        Donec ullamcorper urna nec urna scelerisque, vel malesuada arcu viverra.
+    </p>
+</div>
 
-    <section id="scholarships" class="section">
-        <h2>Available Scholarships</h2>
-        <p>We curate a wide array of scholarship opportunities tailored for international students. Here are some categories:</p>
-        <ul>
-            <li><strong>Full Tuition Scholarships:</strong> Covering all tuition fees for international students, making education accessible.</li>
-            <li><strong>Partial Tuition Scholarships:</strong> Offering a percentage of tuition fees to help lighten the financial burden.</li>
-            <li><strong>Living Stipends:</strong> Financial support for living expenses while studying abroad.</li>
-            <li><strong>Research Grants:</strong> Funding for students pursuing research projects in various fields.</li>
-            <li><strong>Merit-Based Scholarships:</strong> Awards based on academic achievement and extracurricular involvement.</li>
-        </ul>
-        <p>Explore our database to find the scholarship that fits your needs. We update our listings regularly to ensure you have access to the latest opportunities!</p>
-    </section>
-
-    <section id="contact" class="section">
-        <h2>Contact Us</h2>
-        <p>If you have any questions or need assistance, feel free to reach out:</p>
-        <p>Email: <a href="mailto:info@scholarshipsabroad.com" style="color: #0044cc;">info@scholarshipsabroad.com</a></p>
-        <p>Phone: +1 (555) 123-4567</p>
-        <p>Follow us on social media for updates and tips:</p>
-        <div class="social-links">
-            <a href="#">Facebook</a>
-            <a href="#">Twitter</a>
-            <a href="#">Instagram</a>
+<div class="what-we-do">
+    <h2>What We Do</h2>
+    <br>
+    <p>At our company, we specialize in providing innovative solutions that drive success for our clients. Our services are designed to meet the diverse needs of businesses across various industries.</p>
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <br>
+        <div class="service-item">
+            <h3>Scholarship Identification</h3>
+            <p>We help you find the right scholarships based on your profile.</p>
+        </div>
+        <div class="service-item">
+            <h3>Application Guidance</h3>
+            <p>Get expert advice on how to create a winning application.</p>
+        </div>
+        <div class="service-item">
+            <h3>Interview Preparation</h3>
+            <p>Prepare for interviews with personalized coaching and tips.</p>
         </div>
     </section>
 </div>
-<section id="what-we-do" class="section">
-    <h2>What We Do</h2>
-    <p>At Scholarships Abroad, we are dedicated to empowering students to pursue their dreams of studying internationally. Our comprehensive services include:</p>
-    <ul>
-        <li><strong>Scholarship Listings:</strong> A curated database of scholarships from around the world, tailored to various fields of study and academic levels.</li>
-        <li><strong>Application Guidance:</strong> Step-by-step assistance on how to apply for scholarships, including tips on crafting compelling essays and preparing for interviews.</li>
-        <li><strong>Resource Center:</strong> Access to articles, webinars, and guides that provide insights into the scholarship application process and studying abroad.</li>
-        <li><strong>Expert Consultation:</strong> Personalized advice from our team of experts who can help you identify the best scholarship opportunities for your goals.</li>
-        <li><strong>Community Support:</strong> Join our community of like-minded students for networking, sharing experiences, and finding encouragement during your journey.</li>
-    </ul>
-    <p>We are committed to making international education accessible to everyone. Let us help you take the first step toward your future!</p>
+
+<section class="cta-section">
+    <h2 class="cta-title">Ready to Start?</h2>
+    <p class="cta-text">Take the first step towards studying abroad today!</p>
+    <a href="#" class="cta-button">Book a Consultation</a>
 </section>
 
-<style>
-    #what-we-do {
-        background: #e6f7ff;
-    }
-    #what-we-do h2 {
-        color: #0044cc;
-    }
-    #what-we-do ul {
-        list-style-type: none;
-        padding: 0;
-    }
-    #what-we-do li {
-        background: #fff;
-        margin: 10px 0;
-        padding: 15px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-</style>
-<footer>
-    <div class="footer-container">
-        <p>&copy; 2024 Scholarships Abroad. All Rights Reserved.</p>
-        <div class="social-links">
-            <a href="#" title="Facebook"><img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png"/></a>
-            <a href="#" title="Twitter"><img src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png"/></a>
-            <a href="#" title="Instagram"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png"/></a>
+<section class="process">
+    <h2 class="section-title">How It Works</h2>
+    <div class="process-steps">
+        <div class="process-step">
+            <div class="step-number">1</div>
+            <h3>Step 1: Initial Consultation</h3>
+            <p>Discuss your goals and options.</p>
+        </div>
+        <div class="process-step">
+            <div class="step-number">2</div>
+            <h3>Step 2: Strategy Development</h3>
+            <p>Tailor a plan to maximize your chances.</p>
+        </div>
+        <div class="process-step">
+            <div class="step-number">3</div>
+            <h3>Step 3: Application Support</h3>
+            <p>Receive guidance through the application process.</p>
         </div>
     </div>
-</footer>
+</section>
 
-<style>
-    footer {
-        background: #222;
-        color: #fff;
-        text-align: center;
-        padding: 20px 0;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-    }
-    .footer-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: auto;
-        padding: 0 20px;
-    }
-    .social-links a {
-        margin: 0 10px;
-        display: inline-block;
-        transition: transform 0.3s;
-    }
-    .social-links a:hover {
-        transform: scale(1.1);
-    }
-    .social-links img {
-        vertical-align: middle;
-    }
-</style>
+<section class="faq-section">
+    <h2 class="faq-title">Frequently Asked Questions</h2>
 
+    <div class="faq-item">
+        <h3 class="faq-question" data-toggle="faq1">What types of scholarships can I apply for?</h3>
+        <p class="faq-answer">We provide guidance on a wide range of scholarships including merit-based, need-based, and country-specific scholarships.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3 class="faq-question" data-toggle="faq2">How long does the process take?</h3>
+        <p class="faq-answer">The process length depends on application deadlines and your specific case, but we work efficiently to help you meet deadlines.</p>
+    </div>
+</section>
+
+{% include "footer.html" %}
+
+
+
+<script>
+   // Function to observe elements and trigger animation
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+        } else {
+            entry.target.classList.remove('in-view');
+        }
+    });
+});
+
+// Targeting FAQ Section and FAQ items
+document.querySelectorAll('.faq-section, .faq-item').forEach((el) => {
+    observer.observe(el);
+});
+
+// FAQ Toggle functionality
+document.querySelectorAll('.faq-question').forEach((question) => {
+    question.addEventListener('click', () => {
+        const faqItem = question.closest('.faq-item');
+        faqItem.classList.toggle('active');
+    });
+});
+
+</script>
+<script>
+    // Observe the "Who We Are" section and fade-in the paragraph on scroll
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        const paragraph = entry.target.querySelector('p');
+
+        if (entry.isIntersecting) {
+            // Fade in when entering the viewport
+            paragraph.classList.add('in-view');
+            paragraph.classList.remove('out-of-view');
+        } else {
+            // Reset when out of the viewport to allow multiple triggers
+            paragraph.classList.add('out-of-view');
+            paragraph.classList.remove('in-view');
+        }
+    });
+}, {
+    threshold: 0.1 // Trigger when 10% of the section is visible
+});
+
+// Target the "Who We Are" section for observation
+const whoWeAreSection = document.querySelector('.who-we-are');
+observer.observe(whoWeAreSection);
+
+</script>
+
+<script>
+   // Function to observe elements and trigger animation
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+        } else {
+            entry.target.classList.remove('in-view');
+        }
+    });
+});
+
+// Targeting FAQ Section and FAQ items
+document.querySelectorAll('.faq-section, .faq-item').forEach((el) => {
+    observer.observe(el);
+});
+
+// FAQ Toggle functionality
+document.querySelectorAll('.faq-question').forEach((question) => {
+    question.addEventListener('click', () => {
+        const faqItem = question.closest('.faq-item');
+        faqItem.classList.toggle('active');
+    });
+});
+
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                    if (scrollTop > lastScrollTop) {
+                        entry.target.classList.add('show-down');
+                        entry.target.classList.remove('show-up');
+                    } else {
+                        entry.target.classList.add('show-up');
+                        entry.target.classList.remove('show-down');
+                    }
+
+                    entry.target.classList.add('show');
+                    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+                } else {
+                    entry.target.classList.remove('show-down', 'show-up', 'show');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.service-item, .process-step').forEach(item => {
+            observer.observe(item);
+        });
+
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const faqItem = item.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    });
+</script>
 </body>
 </html>

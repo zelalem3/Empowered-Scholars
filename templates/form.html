@@ -2,9 +2,264 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form with Navigation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <link rel="icon" type="image/png" href="/static/images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/static/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/static/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/static/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/static/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <style>
+        input:hover, select:hover{
+            border-color: #004080 !important;
+        }
+        /* CSS */
+        body {
+            background-color: #f4f7fa; /* Light gray background for a soft look */
+            font-family: 'Arial', sans-serif;
+            color: #333; /* Dark text for readability */
+        }
+          .button-27 {
+            appearance: none;
+            background-color: #000000;
+            border: 2px solid #1A1A1A;
+            border-radius: 15px;
+            color: #FFFFFF;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 10px 20px; /* Adjusted padding */
+            text-align: center;
+            text-decoration: none;
+            transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+            width: auto; /* Changed to auto for proper alignment */
+            margin-top: -7px; /* Added negative margin to lift the button */
+        }
+
+        .button-27:hover {
+            box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+            transform: translateY(-2px);
+        }
+
+        .navbar {
+            padding: 20px; /* Adjusted padding */
+        }
+
+        .navbar-light .navbar-brand {
+            font-size: 25px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .navbar-nav {
+            text-align: center;
+        }
+
+        .nav-link {
+            padding: .2rem 1rem;
+            color: black !important;
+        }
+
+        .nav-link.active, .nav-link:focus {
+            color: #fff;
+        }
+
+        .navbar-toggler {
+            background: #fff;
+        }
+
+        .custom-form {
+            padding: 40px;
+            background: #ffffff; /* White background for the form */
+            border-radius: 15px; /* Increased border radius for a softer look */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 500px; /* Max width for the form */
+            margin: 50px auto; /* Center the form */
+            border: 1px solid #e0e0e0; /* Light border for definition */
+        }
+
+        .custom-form h2 {
+            margin-bottom: 30px;
+            font-size: 30px; /* Larger font size */
+            text-align: center;
+            color: #1D6B87; /* Primary color */
+            font-weight: bold; /* Bold heading */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select {
+            width: 100%; /* Full width */
+            padding: 15px; /* Increased padding */
+            border: 1px solid #004080; /* Light border */
+            border-radius: 10px; /* Rounded corners */
+            margin-top: 5px; /* Space above inputs */
+            transition: border 0.3s ease; /* Transition effect */
+            font-size: 16px; /* Font size */
+        }
+
+        .submit {
+            background-color: #1D6B87; /* Button color */
+            color: white;
+            border: none;
+            padding: 12px 25px; /* Increased padding */
+            border-radius: 10px; /* Rounded corners */
+            cursor: pointer;
+            font-size: 18px; /* Increased font size */
+            transition: background 0.3s ease, transform 0.2s ease; /* Smooth transition */
+        }
+
+        .submit:hover {
+            background-color: #155a74; /* Darker shade on hover */
+            transform: translateY(-3px); /* Lift effect */
+        }
+        .birthday-container {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column; /* Stack label and input */
+    align-items: flex-start; /* Align items to the start */
+}
+
+.birthday-label {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.birthday-input {
+    padding: 0.75rem;
+    font-size: 1rem;
+<!--    border: 2px solid #ffa500; /* Orange border */-->
+    border-radius: 5px; /* Rounded corners */
+    width: 100%; /* Full width */
+    max-width: 300px; /* Limit max width */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+input:focus{
+border-color:#004080;
+box-shadow: 0 0 5px rgba(0, 64, 128, 0.5); /* Subtle glow effect */
+ outline: none; /* Remove default outline */
+}
+
+.birthday-input:focus {
+    border-color: #004080; /* Dark blue border on focus */
+    box-shadow: 0 0 5px rgba(0, 64, 128, 0.5); /* Subtle glow effect */
+    outline: none; /* Remove default outline */
+}
+    </style>
 </head>
 <body>
 
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#"></a>
+            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/faq">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/form">
+                            <button class="button-27" role="button">Apply Now</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main">
+        <div class="container">
+            <form method="POST" class="appointment-form custom-form" id="appointment-form">
+                <h2>Education Appointment Form</h2>
+                <div class="form-group-1">
+                    <input type="text" name="fname" id="fname" placeholder="first name" required />
+                    <input type="text" name="lname" id="Lname" placeholder="last name" required />
+                    <input type="email" name="email" id="email" placeholder="Email" required />
+                    <input type="text" name="phone_number" id="phone_number" placeholder="Phone number" required />
+
+                    <div class="select-list">
+                        <select name="education" id="course_type" required>
+                            <option selected value="">Educational Program</option>
+                            <option value="degree">Bachelor's Degree</option>
+                            <option value="master">Master's Degree</option>
+                            <option value="phd">Ph.D.</option>
+
+
+
+                        </select>
+                    </div>
+                  <div class="birthday-container">
+    <label for="birthday" class="birthday-label">Date of Birth:</label>
+    <input type="date" id="birthday" name="birthday" class="birthday-input" required>
+</div>
+                </div>
+                		<div class="container-contact1-form-btn">
+					<button class="contact1-form-btn">
+						<span>
+							Submit
+							<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+            </form>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+	<script src="/static/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="/static/vendor/bootstrap/js/popper.js"></script>
+        <script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="/static/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="/static/vendor/tilt/tilt.jquery.min.js"></script>
+        <script >
+            $('.js-tilt').tilt({
+                scale: 1.1
+            })
+        </script>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-23581568-13');
+    </script>
+    
+    <!--===============================================================================================-->
+        <script src="static/js/.js"></script>
 </body>
 </html>

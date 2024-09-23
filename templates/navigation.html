@@ -1,114 +1,101 @@
-	<header class="header">
-		<h1 class="logo"><a href="#">Flexbox</a></h1>
-      <ul class="main-nav">
-            <li><a href="{{ url_for('about') }}">Apply</a></li>
-          <li><a href="{{ url_for('about') }}">About</a></li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar with Slider using HTML CSS & Bootstrap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* CSS */
+        .button-27 {
+            appearance: none;
+            background-color: #000000;
+            border: 2px solid #1A1A1A;
+            border-radius: 15px;
+            color: #FFFFFF !important;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 10px 20px; /* Adjusted padding */
+            text-align: center;
+            text-decoration: none;
+            transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+            width: auto; /* Changed to auto for proper alignment */
+            margin-top: -7px; /* Added negative margin to lift the button */
+        }
 
-          <li><a href="{{ url_for('contact') }}">Contact</a></li>
-      </ul>
-	</header>
-<style>
+        .button-27:hover {
+            box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+            transform: translateY(-2px);
+        }
 
-* {
-	box-sizing: border-box;
-}
-body {
-	font-family: 'Montserrat', sans-serif;
-	line-height: 1.6;
-	margin: 0;
-	min-height: 100vh;
-}
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
+        .navbar-light .navbar-brand {
+            font-size: 25px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
 
+        .navbar-nav {
+            text-align: center;
+        }
 
-h2,
-h3,
-a {
-	color: #34495e;
-}
+        .nav-link {
+            padding: .2rem 1rem;
+            color: black !important;
+        }
 
-a {
-	text-decoration: none;
-}
+        .nav-link.active, .nav-link:focus {
+            color: #fff;
+        }
 
+        .navbar-toggler {
+            background: #fff;
+        }
 
+        .navbar {
+            padding: 20px; /* Adjusted padding */
+        }
+        a{
+        color:black !important;
+        }
+    </style>
+</head>
+<body>
 
-.logo {
-	margin: 0;
-	font-size: 1.45em;
-}
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#"></a>
+            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-.main-nav {
-	margin-top: 5px;
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link"style="color:black" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/faq">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/form">
+                            <button class="button-27" role="button">Apply Now</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-}
-.logo a,
-.main-nav a {
-	padding: 10px 15px;
-	text-transform: uppercase;
-	text-align: center;
-	display: block;
-}
-
-.main-nav a {
-	color: #34495e;
-	font-size: .99em;
-}
-
-.main-nav a:hover {
-	color: #718daa;
-}
-
-
-
-.header {
-	padding-top: .5em;
-	padding-bottom: .5em;
-	border: 1px solid #a2a2a2;
-	background-color: #f4f4f4;
-	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
-	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-}
-
-
-/* =================================
-  Media Queries
-==================================== */
-
-
-
-
-@media (min-width: 769px) {
-	.header,
-	.main-nav {
-		display: flex;
-	}
-	.header {
-		flex-direction: column;
-		align-items: center;
-    	.header{
-		width: 80%;
-		margin: 0 auto;
-		max-width: 1150px;
-	}
-	}
-
-}
-
-@media (min-width: 1025px) {
-	.header {
-		flex-direction: row;
-		justify-content: space-between;
-	}
-
-}
-
-</style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

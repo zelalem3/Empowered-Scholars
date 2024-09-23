@@ -1,0 +1,485 @@
+/* Main Section Styling */
+.main {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 3rem;
+    background-color: #f0f4f8; /* Fallback color if image fails to load */
+    background-image: url('../images/background.jfif'); /* Background image */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative; /* Required if you want to add overlay effects */
+}
+
+/* Optional: Adding a dark overlay for better text visibility on images */
+.main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* A semi-transparent overlay */
+    border-radius: 20px; /* Match the border-radius of the section */
+    z-index: 1; /* Ensure the overlay stays below the content */
+}
+
+/* Heading 1 (h1) Styling */
+.main h1 {
+    font-size: 3rem;
+    color: #fff; /* Changed to white for better contrast against the image */
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+    z-index: 2; /* Keep it above the overlay */
+}
+
+.main h1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #ffa500;
+    margin: 1rem auto 0 auto;
+    z-index: 2; /* Keep it above the overlay */
+}
+
+/* Heading 2 (h2) Styling */
+.main h2 {
+    font-size: 2.5rem;
+    color: #fff; /* White text for better readability */
+    margin: 2rem 0;
+    font-weight: 400;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 2; /* Keep it above the overlay */
+}
+
+/* Button Styling */
+.main button {
+    background-color: #ffa500; /* A bright color for better contrast */
+    color: #ffffff;
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 165, 0, 0.4);
+    position: relative;
+    z-index: 2; /* Keep it above the overlay */
+}
+
+.main button:hover {
+    background-color: #ff8c00; /* Slightly darker orange on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main h1 {
+        font-size: 2.2rem;
+    }
+
+    .main h2 {
+        font-size: 2rem;
+    }
+
+    .main button {
+        font-size: 1.3rem;
+        padding: 0.8rem 2.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+/* Who We Are Section */
+.who-we-are {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #f9fafc;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.who-we-are h1 {
+    font-size: 2.8rem;
+    color: #004080;
+    margin-bottom: 1.5rem;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+.who-we-are h1::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 4px;
+    background-color: #ffa500;
+    margin: 1rem auto 0;
+}
+
+.who-we-are p {
+    font-size: 1.3rem;
+    color: #555;
+    line-height: 1.8;
+    margin-top: 1.5rem;
+    text-align: justify;
+    padding: 0 1.5rem;
+    transform: translateY(20px); /* Start slightly offset */
+    transition: opacity 1s ease, transform 1s ease; /* Smooth fade and slide */
+}
+/* When the paragraph is in view, make it visible */
+.who-we-are.in-view p {
+    opacity: 1;
+    transform: translateY(0); /* Slide back to its original position */
+}
+/* When the paragraph is out of view (reset animation) */
+.who-we-are p.out-of-view {
+    opacity: 0;
+    transform: translateY(30px); /* Reset to start position */
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    .who-we-are {
+        padding: 1.5rem;
+    }
+
+    .who-we-are h1 {
+        font-size: 2.2rem;
+    }
+
+    .who-we-are p {
+        font-size: 1.1rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Services Section */
+.services {
+    background-color: #f0f4f8;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.services h2 {
+    font-size: 2.2rem;
+    color: #004080;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.service-item {
+    background-color: #ffffff;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-item h3 {
+    font-size: 1.8rem;
+    color: #004080;
+    margin-bottom: 1rem;
+}
+
+.service-item p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .what-we-do h2, .services h2 {
+        font-size: 2rem;
+    }
+
+    .service-item h3 {
+        font-size: 1.5rem;
+    }
+
+    .service-item p {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+/* FAQ Section */
+.faq-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: scale(0.8) rotate(-5deg); /* Initially scaled down and rotated */
+    transition: opacity 0.8s ease, transform 1s ease; /* Smooth fade, scale, and rotate */
+}
+
+.faq-section.in-view {
+    opacity: 1;
+    transform: scale(1) rotate(0deg); /* Bring it back to original scale and position */
+}
+
+.faq-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #004080;
+    position: relative;
+}
+
+.faq-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #ffa500;
+    margin: 1rem auto 0 auto;
+}
+
+/* FAQ Item */
+.faq-item {
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: scale(0.8) rotate(-5deg); /* Initially scaled down and rotated */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.faq-item.in-view {
+    opacity: 1;
+    transform: scale(1) rotate(0deg); /* Smooth scaling and rotating back */
+}
+
+.faq-question {
+    font-size: 1.8rem;
+    color: #004080;
+    margin-bottom: 0.5rem;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.faq-question:hover {
+    color: #ffa500;
+}
+
+.faq-question::before {
+    content: '❓';
+    font-size: 1.5rem;
+    color: #ffa500;
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.faq-answer {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.7;
+    margin-left: 30px;
+    max-height: 0; /* Start hidden */
+    overflow: hidden; /* Prevent overflow */
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    opacity: 0; /* Start hidden */
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px; /* Set an appropriate max-height for the transition */
+    opacity: 1; /* Make visible */
+}
+
+@media (max-width: 768px) {
+    .faq-title {
+        font-size: 2rem;
+    }
+
+    .faq-question {
+        font-size: 1.5rem;
+    }
+
+    .faq-answer {
+        font-size: 1.1rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* What We Do Section */
+.what-we-do {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.what-we-do h2 {
+    font-size: 2.5rem;
+    color: #004080;
+    margin-bottom: 1.5rem;
+    position: relative;
+    letter-spacing: 1.5px;
+}
+
+.what-we-do h2::after {
+    content: '';
+    width: 100px;
+    height: 4px;
+    background-color: #ffa500;
+    display: block;
+    margin: 0.5rem auto;
+}
+
+.what-we-do p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+
+.process {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevent overflow */
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .process-steps {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+}
+
+/* Process Step */
+.process-step {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #e6eef7, #ffffff);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1), -5px -5px 15px rgba(255, 255, 255, 1);
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden; /* Prevent overflow */
+}
+
+.process-step:hover {
+    transform: translateY(-10px);
+}
+
+.step-number {
+    font-size: 3rem;
+    color: #ffa500;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+}
+/* Custom Scrollbar Styling */
+.process-steps::-webkit-scrollbar {
+    height: 8px;
+}
+
+.process-steps::-webkit-scrollbar-thumb {
+    background-color: #ffa500; /* Customize scroll thumb color */
+    border-radius: 10px;
+}
+
+.process-steps::-webkit-scrollbar-track {
+    background-color: #e0e0e0;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .process-step {
+        min-width: 250px;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+.faq-question
+{
+margin:5px;}
+}

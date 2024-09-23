@@ -2,9 +2,157 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/about.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0; /* Remove default body margin */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            font-family: 'Roboto', sans-serif; /* Default font */
+        }
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        p {
+            margin: 0 auto;
+            max-width: 800px;
+            color: #f5f5f5;
+        }
+
+        .section-bg {
+            background-color: #F0F7F7; /* Soft White */
+            padding: 20px;
+            width: 100%;
+            max-width: 100vw; /* Ensure full viewport width */
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        .section-bg p {
+            color: #333;
+        }
+
+        /* Fade-in effect */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease; /* Smooth transition */
+        }
+
+        .fade-in.visible {
+            opacity: 1; /* Fully visible */
+            transform: translateY(0); /* Move to original position */
+        }
+
+        /* Call to Action Styles */
+        .cta-section {
+            background-color: #1D6B87; /* CTA background color */
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin: 20px; /* Margin around CTA */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
+            transition: transform 0.3s; /* Scale effect on hover */
+        }
+
+        .cta-section:hover {
+            transform: scale(1.05); /* Scale up on hover */
+        }
+
+        .cta-section h3 {
+            margin-bottom: 20px;
+            font-size: 28px; /* Larger font size */
+        }
+
+        .cta-section p {
+            margin-bottom: 20px; /* Space below paragraph */
+            font-size: 18px; /* Slightly larger font size */
+        }
+
+        .cta-button {
+            background: linear-gradient(90deg, #ffcc00, #ff9900); /* Gradient background */
+            color: #1D6B87; /* Button text color */
+            padding: 12px 24px; /* Increased padding */
+            border: none;
+            border-radius: 25px; /* More rounded edges */
+            cursor: pointer;
+            font-size: 18px; /* Slightly larger font size */
+            transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition */
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2); /* Shadow for button */
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(90deg, #e6b800, #e68a00); /* Darker gradient on hover */
+            transform: translateY(-3px); /* Lift effect on hover */
+        }
+
+        .cta-button:active {
+            transform: translateY(0); /* Reset on click */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Reduce shadow on click */
+        }
+    </style>
 </head>
 <body>
+
+{% include "navigation.html" %}
+
+<div class="fade-in" style="background-color:#1D6B87;padding:7%;">
+    <h3>Empowered Scholars</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula at urna cursus lacinia. Donec ullamcorper urna nec urna scelerisque, vel malesuada arcu viverra.</p>
+</div>
+
+<div class="section-bg fade-in">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel urna at turpis elementum vestibulum. Curabitur pretium facilisis velit, porta sodales mauris tempor hendrerit. Donec a ullamcorper turpis, ac molestie diam. Morbi cursus mi nec sollicitudin lacinia. Aliquam erat volutpat. Morbi maximus aliquam dolor. Etiam sit amet ipsum id ex eleifend lacinia. Proin eget erat nisl.Donec cursus vel diam placerat ultricies. Fusce suscipit augue magna, vel egestas odio blandit eu. Suspendisse dictum eu diam nec tristique. Aliquam posuere feugiat justo ac tristique. Donec sed metus nisl. Suspendisse fermentum molestie laoreet. Aenean at tellus pellentesque lectus tincidunt. Etiam malesuada ante at sapien congue, a condimentum justo commodo.</p>
+</div>
+
+<!-- Call to Action Section -->
+<div class="cta-section fade-in" id="cta">
+    <h3>Join Us Today!</h3>
+    <p>Be a part of our community and empower yourself with knowledge and resources.</p>
+    <button class="cta-button">Apply Now</button>
+</div>
+
+{% include "footer.html" %}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        // Initial fade-in for non-CTA elements
+        fadeElements.forEach(el => {
+            if (el.id !== 'cta') { // Exclude CTA section from initial fade-in
+                el.classList.add('visible');
+            }
+        });
+
+        // Scroll effect for CTA section
+        const ctaSection = document.getElementById('cta');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    ctaSection.classList.add('visible');
+                } else {
+                    ctaSection.classList.remove('visible'); // Remove class when out of view
+                }
+            });
+        });
+
+        observer.observe(ctaSection); // Start observing the CTA section
+    });
+</script>
 
 </body>
 </html>
