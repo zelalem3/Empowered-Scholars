@@ -1,3 +1,4 @@
 Flask==2.2.2
 Flask-SQLAlchemy==2.5.1
-Bleach==5.0.0
+bleach==6.0.0
+
