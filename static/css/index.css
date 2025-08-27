@@ -1,18 +1,30 @@
 /* Main Section Styling */
 .main {
-    padding: 2rem;
+    padding: 4rem;
     background-color: #f0f4f8; /* Fallback color if image fails to load */
-    background-image: url('../images/background.jfif'); /* Background image */
+    background-image: url('../images/photo_4967632777864392066_w.jpg'); /* Background image */
     background-size: cover; /* Ensures the image covers the entire section */
     background-position: center; /* Centers the background image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     height: 580px;
     border-radius: 20px;
+    animation: bgFadeIn 1.5s ease-out forwards;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     position: relative; /* Required if you want to add overlay effects */
     overflow: hidden; /* Ensures content stays within the section */
 }
+@keyframes bgFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.05); /* optional zoom effect */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 
 /* Optional: Adding a dark overlay for better text visibility on images */
 .main::before {
@@ -48,7 +60,7 @@
     font-size: 2rem;
     margin-top:70px;
     color: #fff; /* White text for better readability */
-  
+
     letter-spacing: 1px;
     position: relative;
     z-index: 2; /* Keep it above the overlay */
@@ -56,7 +68,7 @@
 
 /* Button Styling */
 .main button {
-   
+
     background-color: #ffa500; /* A bright color for better contrast */
     color: #ffffff;
     font-size: 1.5rem;
@@ -67,7 +79,8 @@
     transition: background-color 0.3s ease;
     box-shadow: 0 5px 15px rgba(255, 165, 0, 0.4);
     position: relative;
-    z-index: 2; /* Keep it above the overlay */
+    z-index: 2;
+    margin-bottom:20px;/* Keep it above the overlay */
 }
 
 .main button:hover {
@@ -133,6 +146,36 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
+.who-we-are p {
+  word-spacing: normal;
+  white-space: normal;
+  word-break: break-word;     /* Break long words if needed */
+  hyphens: auto;              /* Add hyphens automatically if allowed */
+}
+@media (max-width: 768px) {
+  .who-we-are p {
+    text-align: left; /* or center */
+  }
+}
+
+
+.who-we-are {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .who-we-are {
+    padding: 1.5rem;
+  }
+
+  .who-we-are p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
 
 .who-we-are h1 {
     font-size: 2.8rem;
