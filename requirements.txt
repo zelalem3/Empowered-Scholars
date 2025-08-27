@@ -1,4 +1,5 @@
 Flask==2.2.2
 Flask-SQLAlchemy==2.5.1
 bleach==6.0.0
+gunicorn==21.2.0
 
