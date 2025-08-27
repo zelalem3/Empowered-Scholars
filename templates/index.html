@@ -257,21 +257,19 @@
 
 <div class="who-we-are">
     <h1 style="margin-top:30px;">Who We Are</h1>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula at
-        urna cursus lacinia.
-        Donec ullamcorper urna nec urna scelerisque, vel malesuada arcu viverra.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula at urna cursus lacinia.
-        Donec ullamcorper urna nec urna scelerisque, vel malesuada arcu viverra.
-    </p>
+    <p style="word-spacing: -1px;;">
+    Empowering International Students to Access Global Education Opportunities. EmpowerEd Scholars is a nonprofit organization providing expert guidance,
+    mentorship, and resources completely free of charge to help you navigate
+    college applications and secure scholarships worldwide.
+</p>
 </div>
 
 <div class="what-we-do">
     <h2>What We Do</h2>
     <br>
-    <p>At our company, we specialize in providing innovative solutions that drive success for our clients. Our services are designed to meet the diverse needs of businesses across various industries.</p>
+    <p>At EmpowerEd Scholars, we transform educational aspirations into achievable realities without financial burden. As a nonprofit organization, we offer completely free comprehensive support, including personalized application guidance, scholarship matching, essay review services, interview preparation, and cultural transition assistance—all delivered by experienced volunteer mentors who have successfully navigated similar journeys..</p>
     <section class="services" id="services">
-        <h2>Our Services</h2>
+        <h2>How we help</h2>
         <br>
         <div class="service-item">
             <h3>Scholarship Identification</h3>
@@ -315,19 +313,19 @@
     </div>
 </section>
 
-  <section class="faq-section">
-        <h2 class="faq-title">Frequently Asked Questions</h2>
+  <!--<section class="faq-section">-->
+  <!--      <h2 class="faq-title">Frequently Asked Questions</h2>-->
 
-        <div class="faq-item">
-            <h3 class="faq-question">What types of scholarships can I apply for?</h3>
-            <p class="faq-answer">We provide guidance on a wide range of scholarships including merit-based, need-based, and country-specific scholarships.</p>
-        </div>
+  <!--      <div class="faq-item">-->
+  <!--          <h3 class="faq-question">What types of scholarships can I apply for?</h3>-->
+  <!--          <p class="faq-answer">We provide guidance on a wide range of scholarships including merit-based, need-based, and country-specific scholarships.</p>-->
+  <!--      </div>-->
 
-        <div class="faq-item">
-            <h3 class="faq-question">How long does the process take?</h3>
-            <p class="faq-answer">The process length depends on application deadlines and your specific case, but we work efficiently to help you meet deadlines.</p>
-        </div>
-    </section>
+  <!--      <div class="faq-item">-->
+  <!--          <h3 class="faq-question">How long does the process take?</h3>-->
+  <!--          <p class="faq-answer">The process length depends on application deadlines and your specific case, but we work efficiently to help you meet deadlines.</p>-->
+  <!--      </div>-->
+  <!--  </section>-->
 
 {% include "footer.html" %}
 
@@ -349,17 +347,17 @@
         }, observerOptions);
 
         // Observe FAQ Section and Items
-        document.querySelectorAll('.faq-section, .faq-item').forEach(el => {
-            inViewObserver.observe(el);
-        });
+        // document.querySelectorAll('.faq-section, .faq-item').forEach(el => {
+        //     inViewObserver.observe(el);
+        // });
 
-        // FAQ Toggle Functionality
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const faqItem = question.closest('.faq-item');
-                faqItem.classList.toggle('active');
-            });
-        });
+        // // FAQ Toggle Functionality
+        // document.querySelectorAll('.faq-question').forEach(question => {
+        //     question.addEventListener('click', () => {
+        //         const faqItem = question.closest('.faq-item');
+        //         faqItem.classList.toggle('active');
+        //     });
+        // });
 
         // Observe the "Who We Are" section and fade-in the paragraph on scroll
         const whoWeAreObserver = new IntersectionObserver((entries) => {
